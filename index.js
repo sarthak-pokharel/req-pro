@@ -11,16 +11,23 @@ server.post("/", function(req,res){
 	req.on("end", function(){
 		try {
 			jsn = JSON.parse(body);
-			request(jsn, function(er,stat,body){
+			request(jsn, function(err, stat,body){
 				res.writeHead(200);
-				log(JSON.parse(stat));
+				res.write(JSON.stringify({
+					error: err,
+					response: stat
+				}));
 				res.end();
 			});
 		}catch(err){
-			res.writeHead(401);
-			res.end("Error");
+			log("err");
+			try{res.writeHead(401)}catch{}
+			res.end("Error\n");
 		}
-		res.end();
 	});
 });
+setInterval(_=>{
+	request("https://requesty.herokuapp.com", ()=>{
+	});
+}, 1000*5);
 server.listen(port, e=>log("Server at "+port));
