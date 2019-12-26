@@ -24,10 +24,11 @@ server.post("/", function(req,res){
 			});
 		}catch(err){
 			log("err");
-			try{res.writeHead(401,{
+			try{
+				res.writeHead(401,{
 				"Access-Control-Allow-Origin":"*"
                                 });
-			})}catch{}
+			}catch{}
 			res.end("{\"Error\":\"true\"}");
 		}
 	});
