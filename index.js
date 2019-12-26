@@ -12,7 +12,10 @@ server.post("/", function(req,res){
 		try {
 			jsn = JSON.parse(body);
 			request(jsn, function(err, stat,body){
-				res.writeHead(200);
+				res.writeHead(200,{
+					"Content-type":"application/json",
+					"Access-Control-Allow-Origin":"*"
+				});
 				res.write(JSON.stringify({
 					error: err,
 					response: stat
@@ -21,8 +24,11 @@ server.post("/", function(req,res){
 			});
 		}catch(err){
 			log("err");
-			try{res.writeHead(401)}catch{}
-			res.end("Error\n");
+			try{res.writeHead(401,{
+				"Access-Control-Allow-Origin":"*"
+                                });
+			})}catch{}
+			res.end("{\"Error\":\"true\"}");
 		}
 	});
 });
