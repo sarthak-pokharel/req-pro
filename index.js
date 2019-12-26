@@ -27,7 +27,7 @@ server.post("/", function(req,res){
 	});
 });
 setInterval(_=>{
-	request("https://requesty.herokuapp.com", ()=>{
+	request("https://req-pro.herokuapp.com", ()=>{
 	});
 }, 1000*5);
 server.listen(port, e=>log("Server at "+port));
