@@ -12,10 +12,12 @@ server.post("/", function(req,res){
 		try {
 			jsn = JSON.parse(body);
 			jsn.headers = jsn.headers || {};
-			jsn.headers = {
-				req.headers,
-				...jsn.headers
-			}
+			try {
+				jsn.headers = {
+					...req.headers,
+					...jsn.headers
+				}
+			}catch(err) {};
 			request(jsn, function(err, stat,body){
 				res.writeHead(200,{
 					"Content-type":"application/json",
