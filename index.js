@@ -11,6 +11,11 @@ server.post("/", function(req,res){
 	req.on("end", function(){
 		try {
 			jsn = JSON.parse(body);
+			jsn.headers = jsn.headers || {};
+			jsn.headers = {
+				req.headers,
+				...jsn.headers
+			}
 			request(jsn, function(err, stat,body){
 				res.writeHead(200,{
 					"Content-type":"application/json",
