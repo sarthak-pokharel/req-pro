@@ -14,8 +14,8 @@ server.post("/", function(req,res){
 			jsn.headers = jsn.headers || {};
 			try {
 				jsn.headers = {
-					...req.headers,
-					...jsn.headers
+					...Object.create(req.headers),
+					...Object.create(jsn.headers)
 				}
 			}catch(err) {};
 			request(jsn, function(err, stat,body){
