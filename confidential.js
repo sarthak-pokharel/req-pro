@@ -1,0 +1,9 @@
+
+let beta_host = "beta.sololearn.com";
+let confidential = {
+	beta_link: "https://"+beta_host,
+	beta_host: beta_host,
+	M31542: "CfDJ8JviGjPW6PhBvxL8qG0pU1wh7E7krbzS1lpBK7NEtmip2ly49GsXLXj9UEsJ4AzWwY3aFwb6bpjbHZ82wNqoz3ycMNAKGP_K_MJcu54tbx24GYt9xHHjhn7n_sq1oCO-Ht4xykKw1Hx4MeMkaEfNE-440a1OW4ph1qClaSautMrI_2xreceRfEnd4Ck1IJ2O2DLgelPOWRhmQ69l6efYANf7Sj0QBHJ6VmV8J7FdPg4ZiD70zs5Vm5URO-gVwc0bi8zgw1nFyILri8UI5Fha83Ut08hf8XZMUw2wCVuCw1MjLAsF4fY5RtE8PDsjkodEo3p-xX-HxBNsDtg_UAeVjT2zdv_GJCXPS32ilq03VsZ30hlM3gAqL5OOYbriq0OaJ_loLaXA55Ned2mTpGpWQzmn7M1Ws6COwi_5ywQbnNHFi9W5AuSusng0LD9VRQd1Qw"
+};
+
+module.exports = confidential;

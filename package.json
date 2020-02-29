@@ -1,20 +1,20 @@
 {
-  "name": "requesty",
+  "name": "get-solo-profile",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start":"node .",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "13.x"
-  },
   "dependencies": {
     "express": "^4.17.1",
     "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
